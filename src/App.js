@@ -1,20 +1,24 @@
-import './App.css';
-import TaskScreen from './screens/TaskScreen';
+import "./App.css";
+import TaskScreen from "./screens/TaskScreen";
+import { useState } from "react";
 
 function App() {
+  const [isModeDark, setIsModeDark] = useState(false);
+
   return (
-    <div>
-      <h1>Welcome to To Do List Application.</h1>
+    <div className={isModeDark ? "theme-dark" : "theme"}>
+      <h1>
+        Welcome to To Do List Application.
+        <button onClick={(_e) => setIsModeDark(!isModeDark)}>
+          Toggle Mode
+        </button>
+      </h1>
       <TaskScreen /> {/* This is like a function call */}
     </div>
   );
 }
 
 export default App;
-
-
-
-
 
 // What is a React Component?
 
